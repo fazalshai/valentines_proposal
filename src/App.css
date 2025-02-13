@@ -1,0 +1,169 @@
+/* Global Styles */
+body {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  text-align: center;
+  font-family: "Courier New", monospace;
+  margin: 0;
+  overflow: hidden; /* Prevents scrolling due to falling hearts */
+}
+
+/* Heading Styles */
+h1 {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: pulse 2s infinite alternate;
+}
+
+h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Romantic Text - Shine, Blink & Pulse Effect */
+.romantic-message {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #ff7eb3, #fff, #ff7eb3);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s infinite linear, blink 2s infinite, pulse 2s infinite alternate;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Scene Container */
+.scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 200px;
+  margin-top: 20px;
+}
+
+/* ASCII Characters */
+.ascii-man, .ascii-woman {
+  font-size: 28px;
+  position: absolute;
+}
+
+/* Moving Object (Rose, Ring, etc.) */
+.moving-object {
+  font-size: 30px;
+  position: absolute;
+  top: 50px;
+  color: red;
+  animation: fadeInOut 0.8s linear;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Proposal Section */
+.proposal-text {
+  margin-top: 30px;
+}
+
+/* "Yes" Button */
+.yes-btn, .yes-btn-alt {
+  font-size: 20px;
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff4b5c, #ff758c);
+  color: white;
+  transition: transform 0.2s, background 0.3s;
+  font-weight: bold;
+}
+
+.yes-btn:hover, .yes-btn-alt:hover {
+  transform: scale(1.2);
+  background: linear-gradient(45deg, #ff758c, #ff4b5c);
+}
+
+/* Love Rain Effect */
+.falling-heart {
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  animation: fall 3s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10px); opacity: 0; }
+  100% { transform: translateY(100vh); opacity: 1; }
+}
+
+/* Fireworks Animation */
+.fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: url('https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  animation: fireworksAnimation 3s ease-in-out forwards;
+}
+
+@keyframes fireworksAnimation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 26px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+
+  .romantic-message {
+    font-size: 18px;
+  }
+
+  .scene {
+    height: 150px;
+  }
+
+  .ascii-man, .ascii-woman {
+    font-size: 22px;
+  }
+
+  .yes-btn, .yes-btn-alt {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
